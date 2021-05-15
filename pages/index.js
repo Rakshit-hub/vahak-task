@@ -3,7 +3,7 @@ import CustomHeader from "../components/Header";
 import InputBox from "../components/inputbox";
 import React, { useEffect, useState } from "react";
 import CustomHead from "../components/Head";
-// import styles from "../styles/Home.module.css";
+import Router from "next/router";
 
 export default function Home() {
   const [source, setSource] = React.useState({});
@@ -46,9 +46,14 @@ export default function Home() {
     setPerson(person);
   };
 
+  const handleRouteToNext = () => {
+    localStorage.setItem("FORMDATA", JSON.stringify(formData));
+    Router.push(`/place-bid`);
+  };
+
   const checkFormValid = () => {
     formData.source && formData.destination && formData.person && formData.type
-      ? localStorage.setItem("FORMDATA", JSON.stringify(formData))
+      ? handleRouteToNext()
       : alert("All Fields are mandatory, Please fill all fields");
     console.log(formData);
   };

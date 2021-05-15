@@ -12,10 +12,10 @@ function CustomHeader(props) {
       </div>
       <style jsx>{`
         .headerContainer {
-          height: 25vw;
+          height: 25vh;
           background: ${THEME_COLOR};
           color: white;
-          font-size: 8vh;
+          font-size: 4vw;
         }
       `}</style>
     </>
