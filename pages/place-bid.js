@@ -33,14 +33,17 @@ export default function PlaceBid() {
       <CustomHeader title={"Place your Bid (2/4 step)"} />
       <div className="col-8 mx-auto mt-5">
         <JourneyDetails />
-        <div className="col-4 mx-auto my-5 text-center d-flex w-100 justify-content-center">
-          <span className="" style={{ fontSize: "4vw" }}>
+        <div className="col-4 mx-auto my-5 text-center  w-100 ">
+          <span
+            className="d-flex justify-content-center"
+            style={{ fontSize: "4vw" }}
+          >
             ₹{" "}
             <input
               type="number"
               style={{ fontSize: "2vw" }}
               autoComplete="off"
-              className="inputType"
+              className="inputType pl-2"
               onChange={(event) => handleChange(event)}
             />
           </span>
@@ -48,7 +51,7 @@ export default function PlaceBid() {
 
         <Checkbox />
 
-        <div className="col-12">
+        <div className="col-12 mb-3">
           {value ? (
             <button className={`w-100 btn btn-primary`} onClick={handleSetBid}>
               Next
