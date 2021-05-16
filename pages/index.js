@@ -19,8 +19,7 @@ export default function Home() {
     setSource(source);
   };
 
-
-  //function to ser destination 
+  //function to ser destination
   const handleDestination = (event) => {
     console.log(source);
     let destination = { destination: event.target.value };
@@ -57,7 +56,7 @@ export default function Home() {
     Router.push(`/place-bid`);
   };
 
-  //to check all fields are mandatory to route to next page 
+  //to check all fields are mandatory to route to next page
   const checkFormValid = () => {
     formData.source && formData.destination && formData.person && formData.type
       ? handleRouteToNext()
@@ -115,21 +114,22 @@ export default function Home() {
               <option value="SUV">SUV</option>
             </select>
           </div>
+          <div className="col-12">
+            <label className="d-block">No of Travellers *</label>
+            <InputBox
+              type="number"
+              className="inputBox form-control"
+              autoFocus={true}
+              placeholder="John Doe"
+              autoComplete="off"
+              min="1"
+              max={option.type == "SUV" ? "6" : "4"}
+              value={value}
+              onChange={(event) => handleTravellerData(event)}
+            ></InputBox>
+          </div>
         </div>
-        <div className="col-12">
-          <label className="d-block">No of Travellers *</label>
-          <InputBox
-            type="number"
-            className="inputBox form-control"
-            autoFocus={true}
-            placeholder="John Doe"
-            autoComplete="off"
-            min="1"
-            max={option.type == "SUV" ? "6" : "4"}
-            value={value}
-            onChange={(event) => handleTravellerData(event)}
-          ></InputBox>
-        </div>
+
         <div className="col-12 my-4 btn btn-primary" onClick={checkFormValid}>
           Enter Bid Details
         </div>
