@@ -14,11 +14,13 @@ export default function PlaceBid() {
     setValue(event.target.value);
   };
 
+  //Route to next page
   const handleSetBid = () => {
     localStorage.setItem("FORMDATA", JSON.stringify(bidDetails));
     Router.push(`/bid-details`);
   };
 
+  //To get all data from localstorage
   useEffect(() => {
     const journeyDetails = JSON.parse(localStorage.getItem("FORMDATA"));
     let biddetils = { bidvalue: value };

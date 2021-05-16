@@ -13,22 +13,27 @@ export default function Home() {
   const [value, setValue] = React.useState("");
   const [person, setPerson] = React.useState({});
 
+  //function to set source
   const handleSource = (event) => {
     let source = { source: event.target.value };
     setSource(source);
   };
 
+
+  //function to ser destination 
   const handleDestination = (event) => {
     console.log(source);
     let destination = { destination: event.target.value };
     setDestination(destination);
   };
 
+  //function to set dropdown data
   const handleDropDownData = (event) => {
     let option = { type: event.target.value };
     setOption(option);
   };
 
+  // Valid check of numbers according to car seat
   const handleTravellerData = (event) => {
     setValue(event.target.value);
     if (option.type == "SUV") {
@@ -46,11 +51,13 @@ export default function Home() {
     setPerson(person);
   };
 
+  //setting all data in local storage
   const handleRouteToNext = () => {
     localStorage.setItem("FORMDATA", JSON.stringify(formData));
     Router.push(`/place-bid`);
   };
 
+  //to check all fields are mandatory to route to next page 
   const checkFormValid = () => {
     formData.source && formData.destination && formData.person && formData.type
       ? handleRouteToNext()
