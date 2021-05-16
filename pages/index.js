@@ -33,12 +33,12 @@ export default function Home() {
     setValue(event.target.value);
     if (option.type == "SUV") {
       if (event.target.value > 6) {
-        alert("select within 6 ");
+        alert("Please select within 6 ");
         setValue(6);
       }
     } else {
       if (event.target.value > 4) {
-        alert("Select within 4");
+        alert("Please select within 4");
         setValue(4);
       }
     }
