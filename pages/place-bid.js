@@ -1,10 +1,10 @@
 import CustomHead from "../components/Head";
 import React, { useEffect } from "react";
 import CustomHeader from "../components/Header";
-import InputBox from "../components/inputbox";
 import JourneyDetails from "../components/JourneyDetails";
 import _JSXStyle from "styled-jsx/style";
 import Router from "next/router";
+import Checkbox from "../components/checkbox";
 
 export default function PlaceBid() {
   const [value, setValue] = React.useState("");
@@ -16,13 +16,13 @@ export default function PlaceBid() {
 
   const handleSetBid = () => {
     localStorage.setItem("FORMDATA", JSON.stringify(bidDetails));
-    Router.push(`/`);
+    Router.push(`/bid-details`);
   };
 
   useEffect(() => {
     const journeyDetails = JSON.parse(localStorage.getItem("FORMDATA"));
     let biddetils = { bidvalue: value };
-    setbidDetails({...journeyDetails, ...biddetils});
+    setbidDetails({ ...journeyDetails, ...biddetils });
     console.log({ ...journeyDetails, ...biddetils });
   }, [value]);
   return (
@@ -44,12 +44,7 @@ export default function PlaceBid() {
           </span>
         </div>
 
-        <div className="form-check text-center my-3">
-          <label className="form-check-label">
-            <input type="checkbox" className="form-check-input" value="" />
-            Rate Negotiable
-          </label>
-        </div>
+        <Checkbox />
 
         <div className="col-12">
           {value ? (
