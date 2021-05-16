@@ -25,7 +25,7 @@ function BidDetails(props) {
             </span>
           </h5>
           <h5 className="mb-1">{bidDetails.name}</h5>
-          <h5 className="mb-1">Call immedaitely if required</h5>
+          <h5 className="mb-1">{bidDetails.remarks}</h5>
         </div>
         <div className="col-4">
           <h3 style={{ fontSize: "3vw" }}>₹ {bidDetails.bidvalue}</h3>

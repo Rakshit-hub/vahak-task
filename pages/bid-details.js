@@ -30,7 +30,7 @@ export default function BidDetails() {
 
   const handleRoute = () => {
     localStorage.setItem("FORMDATA", JSON.stringify(formData));
-    Router.push(`/`);
+    Router.push(`/verify-otp`);
   };
 
   const handlePhoneChange = (event) => {
