@@ -20,7 +20,7 @@ function JourneyDetails() {
 
   return (
     <>
-      <div className="row pb-3 align-items-center journeyBlock">
+      <div className="row py-3 align-items-center journeyBlock">
         <div className="col-8">
           <p className="details">Journey Details</p>
           <h5 className="mb-0">
