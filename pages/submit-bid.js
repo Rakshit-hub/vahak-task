@@ -6,13 +6,14 @@ import JourneyDetails from "../components/JourneyDetails";
 
 export default function SubmitBid() {
   const [bidDetails, setBidDetails] = React.useState({});
+  
   //getting data from localstorage and maintaing it in a state
   useEffect(() => {
     const bidDetails = JSON.parse(localStorage.getItem("FORMDATA"));
     setBidDetails(bidDetails);
     console.log(bidDetails);
   }, []);
-  
+
   const handleSubmit = () => {
     alert("Bid Submitted sucessfully");
   };

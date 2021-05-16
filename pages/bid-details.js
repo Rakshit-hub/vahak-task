@@ -4,13 +4,14 @@ import CustomHeader from "../components/Header";
 import JourneyDetails from "../components/JourneyDetails";
 import Checkbox from "../components/checkbox";
 import InputBox from "../components/inputbox";
-import  Router  from "next/router";
+import Router from "next/router";
 
 export default function BidDetails() {
   const [bidDetails, setBidDetails] = React.useState({});
   const [Name, setName] = React.useState({});
   const [phone, setPhone] = React.useState({});
   const [formData, setFormData] = React.useState({});
+  const [remarks, setRemarks] = React.useState({});
   useEffect(() => {
     const BidDetails = JSON.parse(localStorage.getItem("FORMDATA"));
     setBidDetails(BidDetails);
@@ -37,11 +38,16 @@ export default function BidDetails() {
     setPhone(phone);
   };
 
+  const handleRemarks = (event) => {
+    let remarks = { remarks: event.target.value };
+    setRemarks(remarks);
+  };
+
   useEffect(() => {
-    let formData = { ...bidDetails, ...Name, ...phone };
+    let formData = { ...bidDetails, ...Name, ...phone, ...remarks };
     setFormData(formData);
     console.log({ formData });
-  }, [Name, phone]);
+  }, [Name, phone, remarks]);
 
   const phoneValidation = (inputtxt) => {
     if (inputtxt.length > 1) {
@@ -104,6 +110,7 @@ export default function BidDetails() {
               autoFocus={true}
               placeholder="Remarks"
               autoComplete="off"
+              onChange={(event) => handleRemarks(event)}
             ></InputBox>
           </label>
         </div>

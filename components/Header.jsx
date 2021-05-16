@@ -5,7 +5,13 @@ function CustomHeader(props) {
   return (
     <>
       <div className="col-12 p-3">
-        <img src={Main_Logo} alt="Main logo" width={110} height={45} />
+        <img
+          src={Main_Logo}
+          alt="Main logo"
+          width={110}
+          height={45}
+          style={{ cursor: "pointer" }}
+        />
       </div>
       <div className="d-flex align-items-center justify-content-center headerContainer">
         <p>{props.title}</p>
