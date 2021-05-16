@@ -67,8 +67,11 @@ export default function BidDetails() {
       <CustomHeader title={"Place your Bid (2/4 step)"} />
       <div className="col-8 mx-auto mt-5">
         <JourneyDetails />
-        <div className="col-4 mx-auto my-5 text-center d-flex w-100 justify-content-center">
-          <span className="" style={{ fontSize: "5vw", fontWeight: "bold" }}>
+        <div className="col-4 mx-auto my-5 text-center w-100 ">
+          <span
+            className="d-flex  justify-content-center"
+            style={{ fontSize: "5vw", fontWeight: "bold" }}
+          >
             ₹ <span>{bidDetails.bidvalue}</span>
           </span>
         </div>
